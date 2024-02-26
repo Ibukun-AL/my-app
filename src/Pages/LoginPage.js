@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import { Outlet, Link } from "react-router-dom";
 import validation from '../validation';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
@@ -21,19 +20,8 @@ const LoginPage = () => {
   const handleSubmit=(event)=>{
     event.preventDefault();
     setErrors(validation(values));
-    if(errors.email==="" && errors.password===""){
-      axios.post('http://localhost:3000/login',values)
-      .then(res=>{
-        if(res.data==="success"){
-          navigate("/gallery")
-        }
-        else{
-          alert("No record exists");
-        }
-      })
-      .catch(err=>console.log(err));
     }
-  }
+  
   return (
     <div class="flex min-h-screen w-full items-center justify-center text-gray-600 bg-gray-50">
   <div class="relative">
