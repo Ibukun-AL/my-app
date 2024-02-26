@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { Outlet, Link } from "react-router-dom";
 import validation from '../validation';
-import axios from 'axios'
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
